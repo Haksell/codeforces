@@ -8,9 +8,6 @@ def counts(a):
 for _ in range(int(input())):
     n = int(input())
     s = [ord(c) - 97 for c in input()]
-    if n == 1:
-        print(1)
-        continue
     c0 = counts(s[(n & 1) << 1 :: 2])
     c1 = counts(s[1::2])
     res = n - max(c0) - max(c1)
