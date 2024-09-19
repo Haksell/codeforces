@@ -1,37 +1,49 @@
+from dataclasses import dataclass
 import sys
 
 
-def solve(cb, cs, cc, nb, ns, nc, pb, ps, pc, money):
-    if cb == 0:
-        nb = 0
-    if cs == 0:
-        ns = 0
-    if cc == 0:
-        nc = 0
+@dataclass
+class Ingredient:
+    count: int
+    owned: int
+    price: int
+
+
+def solve(money, bacon, sausage, cheese):
+    if bacon.count == 0:
+        bacon.owned = 0
+    if sausage.count == 0:
+        sausage.owned = 0
+    if cheese.count == 0:
+        cheese.owned = 0
 
     res = min(
-        nb // cb if cb else sys.maxsize,
-        ns // cs if cs else sys.maxsize,
-        nc // cc if cc else sys.maxsize,
+        bacon.owned // bacon.count if bacon.count else sys.maxsize,
+        sausage.owned // sausage.count if sausage.count else sys.maxsize,
+        cheese.owned // cheese.count if cheese.count else sys.maxsize,
     )
-    nb -= res * cb
-    ns -= res * cs
-    nc -= res * cc
+    bacon.owned -= res * bacon.count
+    sausage.owned -= res * sausage.count
+    cheese.owned -= res * cheese.count
 
-    while nb or ns or nc:
-        rb = max(0, cb - nb)
-        rs = max(0, cs - ns)
-        rc = max(0, cc - nc)
-        price_required = pb * rb + ps * rs + pc * rc
+    while bacon.owned or sausage.owned or cheese.owned:
+        rb = max(0, bacon.count - bacon.owned)
+        rs = max(0, sausage.count - sausage.owned)
+        rc = max(0, cheese.count - cheese.owned)
+        price_required = bacon.price * rb + sausage.price * rs + cheese.price * rc
         if price_required > money:
             return res
         res += 1
         money -= price_required
-        nb += rb - cb
-        ns += rs - cs
-        nc += rc - cc
+        bacon.owned += rb - bacon.count
+        sausage.owned += rs - sausage.count
+        cheese.owned += rc - cheese.count
 
-    price_full = pb * cb + ps * cs + pc * cc
+    price_full = (
+        bacon.price * bacon.count
+        + sausage.price * sausage.count
+        + cheese.price * cheese.count
+    )
     return res + money // price_full
 
 
@@ -41,7 +53,10 @@ def main():
     nb, ns, nc = map(int, input().split())
     pb, ps, pc = map(int, input().split())
     money = int(input())
-    print(solve(cb, cs, cc, nb, ns, nc, pb, ps, pc, money))
+    bacon = Ingredient(cb, nb, pb)
+    sausage = Ingredient(cs, ns, ps)
+    cheese = Ingredient(cc, nc, pc)
+    print(solve(money, bacon, sausage, cheese))
 
 
 if __name__ == "__main__":
