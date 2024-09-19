@@ -10,6 +10,7 @@ def solve(start, end):
             return True
         if n < end or n in seen:
             continue
+        seen.add(n)
         third, remainder = divmod(n, 3)
         if remainder == 0:
             heappush(h, third)
