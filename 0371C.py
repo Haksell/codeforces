@@ -25,18 +25,18 @@ def solve(money, ingredients):
             i.owned += r - i.count
 
     price_full = sum(i.price * i.count for i in ingredients)
-    return res + money // price_full
+    res += money // price_full
+    return res
 
 
 def main():
     recipe = input()
-    cb, cs, cc = (recipe.count(c) for c in "BSC")
     nb, ns, nc = map(int, input().split())
     pb, ps, pc = map(int, input().split())
     money = int(input())
-    bacon = Ingredient(cb, nb, pb)
-    sausage = Ingredient(cs, ns, ps)
-    cheese = Ingredient(cc, nc, pc)
+    bacon = Ingredient(recipe.count("B"), nb, pb)
+    sausage = Ingredient(recipe.count("S"), ns, ps)
+    cheese = Ingredient(recipe.count("C"), nc, pc)
     print(solve(money, [bacon, sausage, cheese]))
 
 
