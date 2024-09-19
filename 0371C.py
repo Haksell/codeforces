@@ -9,41 +9,22 @@ class Ingredient:
     price: int
 
 
-def solve(money, bacon, sausage, cheese):
-    if bacon.count == 0:
-        bacon.owned = 0
-    if sausage.count == 0:
-        sausage.owned = 0
-    if cheese.count == 0:
-        cheese.owned = 0
+def solve(money, ingredients):
+    res = min(i.owned // i.count if i.count else sys.maxsize for i in ingredients)
+    for i in ingredients:
+        i.owned -= res * i.count
 
-    res = min(
-        bacon.owned // bacon.count if bacon.count else sys.maxsize,
-        sausage.owned // sausage.count if sausage.count else sys.maxsize,
-        cheese.owned // cheese.count if cheese.count else sys.maxsize,
-    )
-    bacon.owned -= res * bacon.count
-    sausage.owned -= res * sausage.count
-    cheese.owned -= res * cheese.count
-
-    while bacon.owned or sausage.owned or cheese.owned:
-        rb = max(0, bacon.count - bacon.owned)
-        rs = max(0, sausage.count - sausage.owned)
-        rc = max(0, cheese.count - cheese.owned)
-        price_required = bacon.price * rb + sausage.price * rs + cheese.price * rc
+    while any(i.owned and i.count for i in ingredients):
+        required = [max(0, i.count - i.owned) for i in ingredients]
+        price_required = sum(i.price * r for i, r in zip(ingredients, required))
         if price_required > money:
             return res
         res += 1
         money -= price_required
-        bacon.owned += rb - bacon.count
-        sausage.owned += rs - sausage.count
-        cheese.owned += rc - cheese.count
+        for i, r in zip(ingredients, required):
+            i.owned += r - i.count
 
-    price_full = (
-        bacon.price * bacon.count
-        + sausage.price * sausage.count
-        + cheese.price * cheese.count
-    )
+    price_full = sum(i.price * i.count for i in ingredients)
     return res + money // price_full
 
 
@@ -56,7 +37,7 @@ def main():
     bacon = Ingredient(cb, nb, pb)
     sausage = Ingredient(cs, ns, ps)
     cheese = Ingredient(cc, nc, pc)
-    print(solve(money, bacon, sausage, cheese))
+    print(solve(money, [bacon, sausage, cheese]))
 
 
 if __name__ == "__main__":
