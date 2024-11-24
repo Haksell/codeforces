@@ -1,5 +1,5 @@
 # ruff: noqa: E731
-from collections import defaultdict
+from heapq import nlargest
 import sys
 
 read = sys.stdin.readline
@@ -13,11 +13,11 @@ lmir = lambda: list(map(int, read().split()))
 def main():
     for _ in rir():
         n, k = mir()
-        d = defaultdict(int)
+        d = [0] * k
         for _ in range(k):
             b, c = mir()
-            d[b] += c
-        print(sum(sorted(d.values(), reverse=True)[:n]))
+            d[b - 1] += c
+        print(sum(nlargest(n, d)))
 
 
 if __name__ == "__main__":
