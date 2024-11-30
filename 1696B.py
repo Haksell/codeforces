@@ -1,5 +1,6 @@
 # ruff: noqa: E731, E741
 from itertools import groupby
+from operator import itemgetter
 import sys
 
 read = sys.stdin.readline
@@ -13,7 +14,7 @@ lmir = lambda: list(map(int, read().split()))
 def main():
     for _ in rir():
         read()
-        groups = sum(k for k, _ in groupby(mir(), key=(0).__ne__))
+        groups = sum(map(itemgetter(0), groupby(mir(), key=bool)))
         print(min(groups, 2))
 
 
