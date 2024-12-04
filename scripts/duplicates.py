@@ -11,7 +11,7 @@ def main():
         contents[content].append(file)
     for v in contents.values():
         if len(v) >= 2:
-            print(v)
+            print(" == ".join(v))
 
 
 if __name__ == "__main__":
