@@ -17,7 +17,7 @@ def inversions(lst, lo, hi):
     left, left_inv = inversions(lst, lo, mi)
     right, right_inv = inversions(lst, mi, hi)
     res = left_inv + right_inv
-    merged = [0] * len(left) + len(right)
+    merged = [0] * (len(left) + len(right))
     lidx = ridx = 0
     while lidx < len(left) and ridx < len(right):
         if left[lidx] <= right[ridx]:
@@ -27,10 +27,10 @@ def inversions(lst, lo, hi):
             res += len(left) - lidx
             merged[lidx + ridx] = right[ridx]
             ridx += 1
-    for i in range(lidx, len(left)):
-        merged[lidx + ridx] = left[i]
-    for i in range(ridx, len(right)):
-        merged[lidx + ridx] = right[i]
+    for lidx in range(lidx, len(left)):
+        merged[lidx + ridx] = left[lidx]
+    for ridx in range(ridx, len(right)):
+        merged[lidx + ridx] = right[ridx]
     return merged, res
 
 
