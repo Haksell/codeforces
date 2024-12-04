@@ -1,5 +1,3 @@
-from math import ceil
-
 for _ in range(int(input())):
     n, p = map(int, input().split())
     if p >= n:
