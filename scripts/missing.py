@@ -75,7 +75,7 @@ def handle_solved(repo, accepted):
         if problem_id in repo:
             continue
         url = f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
-        print(f"{problem_id}: {url}")
+        print(url)
         cnt += 1
     if cnt == 0:
         print("Codeforces and GitHub are in sync.")
