@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
+import argparse
 from dataclasses import dataclass
 import os
+import pickle
+import sys
 import requests
 
 
@@ -17,7 +20,12 @@ def get_repo():
     return {file[:-3] for file in os.listdir() if file.endswith(".py")}
 
 
-def get_accepted():
+def get_accepted(recompute):
+    ACCEPTED_FILE = "scripts/accepted.pkl"
+    if not recompute and os.path.exists(ACCEPTED_FILE):
+        print(f"Loaded {ACCEPTED_FILE}")
+        return pickle.load(open(ACCEPTED_FILE, "rb"))
+
     url = "https://codeforces.com/api/user.status?handle=Haksell"
     response = requests.get(url)
     if response.status_code != 200:
@@ -41,25 +49,41 @@ def get_accepted():
                     submission["id"], creation_time, contest, problem
                 )
 
+    pickle.dump(accepted, open(ACCEPTED_FILE, "wb"))
     return accepted
 
 
-def main():
-    repo = get_repo()
-    accepted = get_accepted()
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--recompute", action="store_true")
+    return parser.parse_args()
+
+
+def handle_unsolved(repo, accepted):
     present_but_unsolved = sorted(repo - set(accepted))
     if present_but_unsolved:
         print(
             "Problems in repo that are not marked as accepted on codeforces:",
             *present_but_unsolved,
         )
-        return
-    print("OK")
-    # for problem_id, submission in accepted.items():
-    #     print(problem_id, submission)
-    #     print(
-    #         f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
-    #     )
+        sys.exit()
+
+
+def handle_solved(repo, accepted):
+    for problem_id, submission in accepted.items():
+        print(problem_id, submission)
+        print(
+            f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
+        )
+        break
+
+
+def main():
+    args = parse_args()
+    repo = get_repo()
+    accepted = get_accepted(args.recompute)
+    handle_unsolved(repo, accepted)
+    handle_solved(repo, accepted)
 
 
 if __name__ == "__main__":
