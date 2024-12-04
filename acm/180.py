@@ -9,13 +9,13 @@ mir = lambda: map(int, read().split())
 lmir = lambda: list(map(int, read().split()))
 
 
-def inversions(lst):
-    if len(lst) <= 1:
-        return lst, 0
+def inversions(lst, lo, hi):
+    if lo + 1 == hi:
+        return [lst[lo]], 0
 
-    mid = len(lst) >> 1
-    left, left_inv = inversions(lst[:mid])
-    right, right_inv = inversions(lst[mid:])
+    mi = lo + hi >> 1
+    left, left_inv = inversions(lst, lo, mi)
+    right, right_inv = inversions(lst, mi, hi)
     res = left_inv + right_inv
     merged = []
     lidx = ridx = 0
@@ -27,15 +27,17 @@ def inversions(lst):
             res += len(left) - lidx
             merged.append(right[ridx])
             ridx += 1
-    merged.extend(left[lidx:])
-    merged.extend(right[ridx:])
+    for i in range(lidx, len(left)):
+        merged.append(left[i])
+    for i in range(ridx, len(right)):
+        merged.append(right[i])
     return merged, res
 
 
 def main():
-    read()
+    n = ir()
     a = lmir()
-    _, inv = inversions(a)
+    _, inv = inversions(a, 0, n)
     print(inv)
 
 
