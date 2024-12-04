@@ -17,20 +17,20 @@ def inversions(lst, lo, hi):
     left, left_inv = inversions(lst, lo, mi)
     right, right_inv = inversions(lst, mi, hi)
     res = left_inv + right_inv
-    merged = []
+    merged = [0] * len(left) + len(right)
     lidx = ridx = 0
     while lidx < len(left) and ridx < len(right):
         if left[lidx] <= right[ridx]:
-            merged.append(left[lidx])
+            merged[lidx + ridx] = left[lidx]
             lidx += 1
         else:
             res += len(left) - lidx
-            merged.append(right[ridx])
+            merged[lidx + ridx] = right[ridx]
             ridx += 1
     for i in range(lidx, len(left)):
-        merged.append(left[i])
+        merged[lidx + ridx] = left[i]
     for i in range(ridx, len(right)):
-        merged.append(right[i])
+        merged[lidx + ridx] = right[i]
     return merged, res
 
 
