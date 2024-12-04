@@ -1,4 +1,1 @@
-for _ in range(int(input())):
-    input()
-    a = list(map(int, input().split()))
-    print(max(a) - min(a))
+1624A.py
