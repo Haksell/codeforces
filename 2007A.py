@@ -1,4 +1,4 @@
-from math import gcd
+# ruff: noqa: E731, E741
 import sys
 
 read = sys.stdin.readline

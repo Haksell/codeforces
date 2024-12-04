@@ -1,3 +1,5 @@
+# ruff: noqa: E731
+
 from math import gcd
 import sys
 
