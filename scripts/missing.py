@@ -73,11 +73,8 @@ def handle_solved(repo, accepted):
     for problem_id, submission in accepted.items():
         if problem_id in repo:
             continue
-        print(problem_id, submission)
-        print(
-            f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
-        )
-        break
+        url = f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
+        print(f"{problem_id}: {url}")
 
 
 def main():
