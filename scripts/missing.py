@@ -71,7 +71,7 @@ def handle_unsolved(repo, accepted):
 
 def handle_solved(repo, accepted):
     cnt = 0
-    for problem_id, submission in accepted.items():
+    for problem_id, submission in sorted(accepted.items()):
         if problem_id in repo:
             continue
         url = f"https://codeforces.com/contest/{submission.contest}/submission/{submission.id}"
