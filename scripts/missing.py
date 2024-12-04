@@ -54,6 +54,7 @@ def main():
             *present_but_unsolved,
         )
         return
+    print("OK")
     # for problem_id, submission in accepted.items():
     #     print(problem_id, submission)
     #     print(
