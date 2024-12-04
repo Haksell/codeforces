@@ -3,3 +3,4 @@
 /acm/in*
 /acm/out*
 /scripts/accepted.pkl
+.ruff_cache/
