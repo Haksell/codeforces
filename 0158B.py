@@ -1,8 +1,8 @@
 from collections import Counter
 
 n = int(input())
-l = list(map(int, input().split()))
-counter = Counter(l)
+a = list(map(int, input().split()))
+counter = Counter(a)
 
 res = counter[4]
 res += counter[3]

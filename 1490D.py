@@ -1,20 +1,15 @@
-import sys
-read = sys.stdin.readline
-write = lambda x, end="\n": sys.stdout.write(x + end)
-
-
 class Node:
     def __init__(self, val):
         self.val = val
         self.left = self.right = None
 
 
-def f(l):
-    if l:
-        i = max(range(len(l)), key=l.__getitem__)
-        n = Node(l[i])
-        n.left = f(l[:i])
-        n.right = f(l[i + 1:])
+def f(a):
+    if a:
+        i = max(range(len(a)), key=a.__getitem__)
+        n = Node(a[i])
+        n.left = f(a[:i])
+        n.right = f(a[i + 1 :])
         return n
 
 
@@ -27,8 +22,8 @@ def g(t, d):
 
 for _ in range(int(input())):
     n = int(input())
-    l = list(map(int, input().split()))
+    a = list(map(int, input().split()))
     z = []
-    t = f(l)
+    t = f(a)
     g(t, 0)
     print(*z)

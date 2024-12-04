@@ -1,15 +1,11 @@
-from math import *
-import sys
-read = sys.stdin.readline
-write = lambda x, end="\n": sys.stdout.write(x + end)
+from math import ceil, log2
+
 
 for _ in range(int(input())):
     n = int(input())
-    l = list(map(int, input().split()))
+    a = list(map(int, input().split()))
     z = 0
     for i in range(n - 1):
-        a, b = sorted(l[i:i + 2])
-        x = max(0, ceil(log2(b / a)) - 1)
+        x = max(0, ceil(log2(a[i + 1] / a[i])) - 1)
         z += x
-        #print(i, x)
     print(z)

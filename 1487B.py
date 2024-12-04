@@ -1,9 +1,3 @@
-from random import randint
-import sys
-read = sys.stdin.readline
-write = lambda x, end="\n": sys.stdout.write(x + end)
-
-
 def naive(n, k):
     a = n - 1
     b = 0
@@ -24,12 +18,6 @@ def f(n, k):
         return (res - 1 + diff) % n + 1
 
 
-# for n in range(3, 11, 2):
-#     for k in range(1, 11):
-#         print(n, k, naive(n, k), f(n, k), (f(n, k) - naive(n, k)) % n)
-#     print()
-
-input()
-for line in sys.stdin:
-    n, k = map(int, line.split())
+for _ in range(int(input())):
+    n, k = map(int, input().split())
     print(f(n, k))
