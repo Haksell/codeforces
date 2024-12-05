@@ -6,6 +6,7 @@ RUFF_LINE = "# ruff: noqa: E731, E741\n"
 
 
 def main():
+    already_ruffified = True
     for filename in os.listdir():
         if not FILE_PATTERN.fullmatch(filename) or not os.path.isfile(filename):
             continue
@@ -29,8 +30,11 @@ def main():
             with open(filename, "w") as file:
                 file.writelines(lines)
             print(f"Processed file: {filename}")
+            already_ruffified = False
         except Exception as e:
             print(f"Error writing to {filename}: {e}")
+    if already_ruffified:
+        print("All files are already ruffified!")
 
 
 if __name__ == "__main__":
