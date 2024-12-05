@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 a = [int(input()) for _ in range(4)]
 d = int(input())
 res = [False] * d

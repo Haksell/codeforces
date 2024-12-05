@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 input()
 crimes = 0
 officers = 0

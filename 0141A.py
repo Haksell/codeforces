@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from collections import Counter
 
 a, b, c = (input() for _ in range(3))

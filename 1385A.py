@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     x, y, z = sorted(list(map(int, input().split())))
     if y == z:

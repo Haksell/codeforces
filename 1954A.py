@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def int_ceil(numer, denom):
     return (numer + denom - 1) // denom
 

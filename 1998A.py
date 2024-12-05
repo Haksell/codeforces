@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     xc, yc, k = map(int, input().split())
     if k & 1:

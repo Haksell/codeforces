@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def naive(n, k):
     a = n - 1
     b = 0

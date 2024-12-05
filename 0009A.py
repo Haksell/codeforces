@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from math import gcd
 
 y, w = map(int, input().split())

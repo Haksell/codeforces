@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(a, b, k):
     ka = kb = k >> 1
     for i in range(1, k + 1):

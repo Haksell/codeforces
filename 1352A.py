@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def summands(n):
     lst = []
     power = 1

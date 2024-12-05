@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from math import atan2, cos, hypot, sin, tau
 
 

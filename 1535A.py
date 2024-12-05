@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a = list(map(int, input().split()))
     i = sorted(range(4), key=a.__getitem__)

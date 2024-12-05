@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n = int(input())
 a = sorted(map(int, input().split()))
 s = sum(a)

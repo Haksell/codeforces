@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, m, k, H = map(int, input().split())
     maxi = (m - 1) * k

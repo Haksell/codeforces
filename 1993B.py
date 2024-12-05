@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(n, a):
     evens = sorted(ai for ai in a if not ai & 1)
     if len(evens) == n:

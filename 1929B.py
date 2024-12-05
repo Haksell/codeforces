@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, k = map(int, input().split())
     two_by_two = ~-n << 2

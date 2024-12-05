@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     x, y, n = map(int, input().split())
     res = n // x * x + y

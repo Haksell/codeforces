@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def parse_line():
     x, y = map(ord, input())
     x -= 97

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 inside = 0
 res = 0
 for _ in range(int(input())):

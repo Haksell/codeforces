@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def counts(a):
     res = [0] * 26
     for ai in a:

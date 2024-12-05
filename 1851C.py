@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(a, k):
     if k == 1:
         return True

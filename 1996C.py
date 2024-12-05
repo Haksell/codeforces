@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, q = map(int, input().split())
     a = [ord(c) - 97 for c in input()]

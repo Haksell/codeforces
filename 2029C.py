@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def valid(a, first_occ, target):
     for i, ai in reversed(list(enumerate(a, 1))):
         target += 1 if ai < target else -1

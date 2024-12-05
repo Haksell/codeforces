@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n, k = map(int, input().split())
 h = list(map(int, input().split()))
 

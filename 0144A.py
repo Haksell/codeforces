@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n = int(input())
 a = list(map(int, input().split()))
 max_idx = max(range(n), key=lambda i: (a[i], -i))

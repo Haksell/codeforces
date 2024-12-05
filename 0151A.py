@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 friends, k, m, c, d, salt, nl, np = map(int, input().split())
 drink_portions = m * k // nl
 lime_portions = c * d

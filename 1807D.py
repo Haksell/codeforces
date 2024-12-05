@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from itertools import accumulate
 from operator import xor
 

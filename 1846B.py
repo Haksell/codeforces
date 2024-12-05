@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(grid, c):
     return (
         grid[0][0] == grid[1][1] == grid[2][2] == c

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     s = input()
     i = next((i for i in range(1, len(s)) if s[i - 1] == s[i]), None)

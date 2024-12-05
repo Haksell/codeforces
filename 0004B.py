@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from operator import itemgetter
 
 d, st = map(int, input().split())

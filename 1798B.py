@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 LIM = 50_001
 
 for _ in range(int(input())):

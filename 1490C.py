@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 c = [i**3 for i in range(1, 10**4)]
 s = set(c)
 for _ in range(int(input())):

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 xs = ys = zs = 0
 for _ in range(int(input())):
     x, y, z = map(int, input().split())

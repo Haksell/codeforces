@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 import re
 
 for _ in range(int(input())):

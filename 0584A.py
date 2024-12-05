@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n, t = map(int, input().split())
 if n == 1 and t == 10:
     print(-1)

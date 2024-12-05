@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def min_last_ops(a, b):
     res = 1 << 30
     for ai, bi in zip(a, b):

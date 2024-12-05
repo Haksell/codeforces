@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from string import ascii_lowercase
 
 input()

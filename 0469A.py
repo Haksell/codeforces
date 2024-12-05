@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n = int(input())
 s1 = set(list(map(int, input().split()))[1:])
 s2 = set(list(map(int, input().split()))[1:])

@@ -1,4 +1,4 @@
-# ruff: noqa: E731
+# ruff: noqa: E731, E741
 import sys
 
 read = sys.stdin.readline

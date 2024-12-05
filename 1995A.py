@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(n, k):
     if k == 0:
         return 0

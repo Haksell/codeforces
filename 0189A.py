@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 # from functools import lru_cache
 from math import inf
 

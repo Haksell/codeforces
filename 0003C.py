@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def triplets(g):
     for r in g:
         yield r

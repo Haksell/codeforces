@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def int_ceil(n, k):
     return (n + k - 1) // k
 

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     i, e, u = map(int, input().split())
     eq, ed = divmod(e, 3)

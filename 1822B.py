@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from heapq import nlargest, nsmallest
 
 for _ in range(int(input())):

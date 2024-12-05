@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 from collections import deque
 
 for _ in range(int(input())):

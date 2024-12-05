@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 input()
 a = list(map(int, input().split()))
 o = sum(n & 1 for n in a)

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 TARGET = "vika"
 
 for _ in range(int(input())):

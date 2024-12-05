@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     x, y = map(int, input().split())
     y_screens = (y + 1) >> 1

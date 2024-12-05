@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     (la, ra) = map(int, input().split())
     (lb, rb) = map(int, input().split())

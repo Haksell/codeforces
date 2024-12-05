@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 diff = 0
 for _ in range(int(input())):
     m, c = map(int, input().split())

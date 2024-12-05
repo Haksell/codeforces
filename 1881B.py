@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(a, b, c):
     if b % a != 0 or c % a != 0:
         return False

@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 last = res = 0
 for c in input():
     loc = ord(c) - 97

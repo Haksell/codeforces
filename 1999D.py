@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def solve(s, t):
     s = list(s)
     ti = 0

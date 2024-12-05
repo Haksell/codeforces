@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 for _ in range(int(input())):
     size = int(input())
     grid = [input() for _ in range(size)]

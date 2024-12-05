@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 n = int(input())
 start, *a = map(int, input().split())
 mini = maxi = start
