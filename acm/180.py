@@ -9,35 +9,39 @@ mir = lambda: map(int, read().split())
 lmir = lambda: list(map(int, read().split()))
 
 
-def inversions(lst, lo, hi):
-    if lo + 1 == hi:
-        return [lst[lo]], 0
+class FenwickTree:
+    def __init__(self, size):
+        self.__len = size
+        self.__tree = [0] * (size + 1)
 
-    mi = lo + hi >> 1
-    left, left_inv = inversions(lst, lo, mi)
-    right, right_inv = inversions(lst, mi, hi)
-    res = left_inv + right_inv
-    merged = [0] * (len(left) + len(right))
-    lidx = ridx = 0
-    while lidx < len(left) and ridx < len(right):
-        if left[lidx] <= right[ridx]:
-            merged[lidx + ridx] = left[lidx]
-            lidx += 1
-        else:
-            res += len(left) - lidx
-            merged[lidx + ridx] = right[ridx]
-            ridx += 1
-    for lidx in range(lidx, len(left)):
-        merged[lidx + ridx] = left[lidx]
-    for ridx in range(ridx, len(right)):
-        merged[lidx + ridx] = right[ridx]
-    return merged, res
+    def __len__(self):
+        return self.__len
+
+    def update(self, i, delta):
+        i += 1
+        while i <= self.__len:
+            self.__tree[i] += delta
+            i += i & -i
+
+    def prefix_sum(self, i):
+        res = 0
+        while i > 0:
+            res += self.__tree[i]
+            i -= i & -i
+        return res
 
 
 def main():
-    n = ir()
+    read()
     a = lmir()
-    _, inv = inversions(a, 0, n)
+    indices = sorted(range(len(a)), key=a.__getitem__)
+    for compressed, i in enumerate(indices):
+        a[i] = compressed
+    fenwick_tree = FenwickTree(len(a))
+    inv = 0
+    for i, ai in enumerate(a):
+        inv += i - fenwick_tree.prefix_sum(ai + 1)
+        fenwick_tree.update(ai, 1)
     print(inv)
 
 
