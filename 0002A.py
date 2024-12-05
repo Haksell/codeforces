@@ -1,3 +1,4 @@
+# ruff: noqa: E731
 from collections import defaultdict
 
 
