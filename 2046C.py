@@ -11,52 +11,31 @@ mir = lambda: map(int, read().split())
 lmir = lambda: list(map(int, read().split()))
 
 
-class SegmentTree:
-    def __init__(self, data):
-        self.__n = len(data)
-        self.__tree = [0] * (2 * self.__n)
-        for i in range(self.__n):
-            self.__tree[self.__n + i] = data[i]
-        for i in range(self.__n - 1, 0, -1):
-            self.__tree[i] = self.__tree[i << 1] + self.__tree[i << 1 | 1]
+class FenwickTree:
+    def __init__(self, size):
+        self.__len = size
+        self.__tree = [0] * (size + 1)
 
-    def __len__(self):
-        return self.__n
+    def update(self, i, delta):
+        i += 1
+        while i <= self.__len:
+            self.__tree[i] += delta
+            i += i & -i
 
-    def __repr__(self):
-        return f"{self.__class__.__name__}({self.__tree[self.__n:]})"
-
-    def __getitem__(self, i):
-        return self.__tree[i + self.__n]
-
-    def __setitem__(self, i, value):
-        i += self.__n
-        self.__tree[i] = value
-        while i > 1:
-            i >>= 1
-            self.__tree[i] = self.__tree[i << 1] + self.__tree[i << 1 | 1]
-
-    def range_sum(self, left, right):
-        left += self.__n
-        right += self.__n
+    def prefix_sum(self, i):
         res = 0
-        while left < right:
-            if left & 1:
-                res += self.__tree[left]
-                left += 1
-            if right & 1:
-                right -= 1
-                res += self.__tree[right]
-            left >>= 1
-            right >>= 1
+        while i > 0:
+            res += self.__tree[i]
+            i -= i & -i
         return res
 
 
 def main():
     for _ in rir():
         fuzz = random.randint(1, 1 << 30)
+        num_points = ir()
         points = defaultdict(list)
-        for _ in rir():
+        for _ in range(num_points):
             x, y = mir()
             points[x + fuzz].append(y + fuzz)
 
@@ -64,22 +43,22 @@ def main():
         ny = len(unique_ys)
         y_map = {y: i for i, y in enumerate(unique_ys)}
 
-        left = SegmentTree([0] * ny)
-        right = SegmentTree([0] * ny)
+        left = FenwickTree(ny)
+        right = FenwickTree(ny)
         for ys in points.values():
             for y in ys:
-                right[y_map[y]] += 1
+                right.update(y_map[y], 1)
 
-        best_min = best_x = best_y = 0
+        best_min = best_x = best_y = left_total = 0
         for x, ys in sorted(points.items()):
             lo = 1
             hi = ny - 1
             while lo <= hi:
                 mi = lo + hi >> 1
-                bl = left.range_sum(0, mi)
-                tl = left.range_sum(mi, ny)
-                br = right.range_sum(0, mi)
-                tr = right.range_sum(mi, ny)
+                bl = left.prefix_sum(mi)
+                br = right.prefix_sum(mi)
+                tl = left_total - bl
+                tr = num_points - left_total - br
                 m = min(bl, tl, br, tr)
                 if m > best_min:
                     best_min = m
@@ -91,8 +70,9 @@ def main():
                     hi = mi - 1
             for y in ys:
                 idx = y_map[y]
-                left[idx] += 1
-                right[idx] -= 1
+                left_total += 1
+                left.update(idx, 1)
+                right.update(idx, -1)
         print(best_min)
         print(best_x, best_y)
 
