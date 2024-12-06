@@ -14,7 +14,7 @@ def main():
 
         re_match = re.fullmatch(r"(\d{1,4})([a-zA-Z]\d?)", filename)
         if not re_match:
-            print("Invalid format. Expected pattern: '123A' or '1234B'.")
+            print("Invalid problem.")
             continue
 
         contest, problem = re_match.groups()
@@ -31,7 +31,6 @@ def main():
 
         with open(filename, "w") as f:
             f.write(content)
-
         print(f"Written to {filename}")
 
 
