@@ -1,3 +1,4 @@
+# ruff: noqa: E731, E741
 def f(n):
     if n % 4 == 0:
         q = n >> 2
