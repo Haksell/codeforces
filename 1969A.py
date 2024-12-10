@@ -11,7 +11,9 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        print(max(mir()))
+        n = ir()
+        p = [pi - 1 for pi in mir()]
+        print(2 if any(i == p[p[i]] for i in range(n)) else 3)
 
 
 if __name__ == "__main__":

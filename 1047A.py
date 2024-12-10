@@ -10,8 +10,11 @@ lmir = lambda: list(map(int, read().split()))
 
 
 def main():
-    for _ in rir():
-        print(max(mir()))
+    n = ir()
+    if n % 3 != 2:
+        print(1, 1, n - 2)
+    else:
+        print(1, 2, n - 3)
 
 
 if __name__ == "__main__":

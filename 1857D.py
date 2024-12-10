@@ -11,7 +11,13 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        print(max(mir()))
+        n = ir()
+        a = lmir()
+        b = lmir()
+        m = max(map(int.__sub__, a, b))
+        res = [i + 1 for i in range(n) if a[i] - b[i] == m]
+        print(len(res))
+        print(*res)
 
 
 if __name__ == "__main__":

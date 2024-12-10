@@ -11,7 +11,10 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        print(max(mir()))
+        read()
+        a = lmir()
+        res = [a[0]] + list(map(min, a, a[1:])) + [a[-1]]
+        print(*res)
 
 
 if __name__ == "__main__":

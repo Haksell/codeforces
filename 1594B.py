@@ -8,10 +8,16 @@ rir = lambda: range(int(read()))
 mir = lambda: map(int, read().split())
 lmir = lambda: list(map(int, read().split()))
 
+MOD = 1_000_000_007
+
 
 def main():
     for _ in rir():
-        print(max(mir()))
+        n, k = mir()
+        r = 0
+        for b in list(map(int, bin(k)[2:])):
+            r = (r * n + b) % MOD
+        print(r)
 
 
 if __name__ == "__main__":

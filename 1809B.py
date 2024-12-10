@@ -1,4 +1,5 @@
 # ruff: noqa: E731, E741
+from math import isqrt
 import sys
 
 read = sys.stdin.readline
@@ -11,7 +12,8 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        print(max(mir()))
+        n = ir()
+        print(isqrt(n - 1))
 
 
 if __name__ == "__main__":

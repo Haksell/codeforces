@@ -10,8 +10,10 @@ lmir = lambda: list(map(int, read().split()))
 
 
 def main():
-    for _ in rir():
-        print(max(mir()))
+    n, k = mir()
+    distinct = "".join(chr(97 + i) for i in range(k))
+    same = "".join(chr(97 + (i & 1)) for i in range(n - k))
+    print(distinct + same)
 
 
 if __name__ == "__main__":

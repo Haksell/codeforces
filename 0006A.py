@@ -10,8 +10,14 @@ lmir = lambda: list(map(int, read().split()))
 
 
 def main():
-    for _ in rir():
-        print(max(mir()))
+    a, b, c, d = sorted(mir())
+    print(
+        "TRIANGLE"
+        if a + b > c or b + c > d
+        else "SEGMENT"
+        if a + b == c or b + c == d
+        else "IMPOSSIBLE"
+    )
 
 
 if __name__ == "__main__":
