@@ -30,7 +30,7 @@ def show_standalone_duplicates(standalone):
 
 # TODO: handle >2 subtasks (YAGNI though)
 def show_subtasks(subtasks):
-    DIFFERENT = {"1243B", "1551B", "1579E", "1593D", "2039C"}
+    DIFFERENT = {"1243B", "1551B", "1579E", "1593D", "1791G", "2039C"}
     title("SUBTASKS")
     for k, v in sorted(subtasks.items()):
         if k not in DIFFERENT:
