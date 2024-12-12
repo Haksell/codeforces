@@ -1,4 +1,3 @@
 # ruff: noqa: E731, E741
 n = int(input())
-input()
-print(n + 1)
+print(0 if n & 1 else 1 << (n >> 1))

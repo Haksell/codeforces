@@ -1,4 +1,3 @@
 # ruff: noqa: E731, E741
 n = int(input())
-input()
-print(n + 1)
+print(1 + (n - 1) * n * 2)
