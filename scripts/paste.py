@@ -3,6 +3,8 @@ import pyperclip
 import re
 import readline  # noqa: F401
 
+DIR = "problems"
+
 
 def main():
     while True:
@@ -18,7 +20,7 @@ def main():
             continue
 
         contest, problem = re_match.groups()
-        filename = contest.zfill(4) + problem.upper() + ".py"
+        filename = os.path.join(DIR, contest.zfill(4) + problem.upper() + ".py")
 
         if os.path.exists(filename):
             print(f"{filename} already exists")

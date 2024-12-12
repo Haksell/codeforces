@@ -7,6 +7,8 @@ import pickle
 import sys
 import requests
 
+DIR = "problems"
+
 
 @dataclass
 class Submission:
@@ -17,7 +19,7 @@ class Submission:
 
 
 def get_repo():
-    return {file[:-3] for file in os.listdir() if file.endswith(".py")}
+    return {file[:-3] for file in os.listdir(DIR) if file.endswith(".py")}
 
 
 def get_accepted(recompute):
