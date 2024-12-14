@@ -1,14 +1,23 @@
 # ruff: noqa: E731, E741
-from itertools import count
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
 
 
-def f(n, m):
-    for i in count(1):
-        if n == 0:
-            return i - 1
-        if i % m != 0:
-            n -= 1
+def main():
+    a, b = mir()
+    r = m = 0
+    while a:
+        r += a
+        m += a
+        a, m = divmod(m, b)
+    print(r)
 
 
-a, b = map(int, input().split())
-print(f(a, b))
+if __name__ == "__main__":
+    main()
