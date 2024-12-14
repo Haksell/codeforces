@@ -1,10 +1,14 @@
+import argparse
 import os
+import pickle
 from rapidfuzz import fuzz
 from itertools import combinations
 from multiprocessing import Pool
 import pyperclip
 
 DIR = "problems"
+CACHE_FILE = "scripts/similarities.pkl"
+CACHE_SIZE = 1000
 
 DIFFERENT = {
     ("1370A", "1968A"),
@@ -37,7 +41,7 @@ def compare_files(pair):
     return (similarity, pair)
 
 
-def find_similarities():
+def recompute_similarities():
     global contents
     contents = dict()
     filenames = []
@@ -51,12 +55,31 @@ def find_similarities():
         with open(filename) as f:
             contents[filename] = f.read()
 
-    file_pairs = [
-        pair for pair in combinations(filenames, 2) if problems(pair) not in DIFFERENT
-    ]
+    file_pairs = list(combinations(filenames, 2))
     with Pool() as pool:
         results = pool.map(compare_files, file_pairs)
+    results.sort(reverse=True)
+    pickle.dump(results[:CACHE_SIZE], open(CACHE_FILE, "wb"))
+    print(f"Saved to {CACHE_FILE}")
     return results
+
+
+def get_similarities_cache():
+    print(f"Loaded {CACHE_FILE}")
+    return pickle.load(open(CACHE_FILE, "rb"))
+
+
+def find_similarities(recompute):
+    results = (
+        recompute_similarities()
+        if recompute or not os.path.exists(CACHE_FILE)
+        else get_similarities_cache() or recompute_similarities()
+    )
+    return [
+        (similarity, pair)
+        for similarity, pair in results
+        if problems(pair) not in DIFFERENT
+    ]
 
 
 def url(filename):
@@ -65,8 +88,15 @@ def url(filename):
     return f"https://codeforces.com/contest/{contest}/problem/{problem}"
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--recompute", action="store_true")
+    return parser.parse_args()
+
+
 def main():
-    similarities = find_similarities()
+    args = parse_args()
+    similarities = find_similarities(args.recompute)
     similarity, pair = max(similarities)
     file1, file2 = pair
     pyperclip.copy(f"{repr(problems(pair))},")
