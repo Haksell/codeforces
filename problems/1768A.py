@@ -1,4 +1,18 @@
 # ruff: noqa: E731, E741
-for _ in range(int(input())):
-    k = int(input())
-    print(k - 1)
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
+
+
+def main():
+    for _ in rir():
+        print(ir() - 1)
+
+
+if __name__ == "__main__":
+    main()
