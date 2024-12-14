@@ -11,11 +11,9 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        k, q = mir()
-        a = lmir()
-        m = min(a)
-        n = lmir()
-        print(*[min(m - 1, ni) for ni in n])
+        read()
+        m = min(mir())
+        print(*[min(m - 1, n) for n in mir()])
 
 
 if __name__ == "__main__":

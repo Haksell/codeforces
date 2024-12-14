@@ -2,13 +2,19 @@
 import sys
 
 read = sys.stdin.readline
-write = sys.stdout.write
+input = lambda: read().rstrip()
 ir = lambda: int(read())
 rir = lambda: range(int(read()))
 mir = lambda: map(int, read().split())
 lmir = lambda: list(map(int, read().split()))
 
-for _ in rir():
-    n = ir()
-    a = lmir()
-    print(1, n)
+
+def main():
+    for _ in rir():
+        n = input()
+        read()
+        print(1, n)
+
+
+if __name__ == "__main__":
+    main()

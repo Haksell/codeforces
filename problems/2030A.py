@@ -13,9 +13,7 @@ def main():
     for _ in rir():
         n = ir()
         a = lmir()
-        maxi = max(a)
-        mini = min(a)
-        print((maxi - mini) * (n - 1))
+        print((max(a) - min(a)) * (n - 1))
 
 
 if __name__ == "__main__":

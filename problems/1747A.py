@@ -1,5 +1,19 @@
 # ruff: noqa: E731, E741
-for _ in range(int(input())):
-    n = int(input())
-    a = list(map(int, input().split()))
-    print(abs(sum(a)))
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
+
+
+def main():
+    for _ in rir():
+        read()
+        print(abs(sum(mir())))
+
+
+if __name__ == "__main__":
+    main()

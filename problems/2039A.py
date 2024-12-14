@@ -11,9 +11,7 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        n = ir()
-        res = list(range(1, 2 * n, 2))
-        print(*res)
+        print(*range(1, ir() << 1, 2))
 
 
 if __name__ == "__main__":

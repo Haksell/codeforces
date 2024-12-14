@@ -12,8 +12,7 @@ lmir = lambda: list(map(int, read().split()))
 
 def main():
     for _ in rir():
-        n = ir()
-        print(isqrt(n - 1))
+        print(isqrt(ir() - 1))
 
 
 if __name__ == "__main__":
