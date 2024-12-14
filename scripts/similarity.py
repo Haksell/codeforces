@@ -25,6 +25,16 @@ DIFFERENT = {
     ("1421A", "1772A"),
     ("1421A", "1455C"),
     ("1335A", "1370A"),
+    ("1339A", "1422A"),
+    ("1844A", "2009A"),
+    ("1482A", "2009A"),
+    ("1421A", "2009A"),
+    ("1422A", "1956B"),
+    ("1902A", "1972B"),
+    ("1339A", "1956B"),
+    ("1335A", "1968A"),
+    ("1566A", "1646A"),
+    ("0630C", "2010B"),
 }
 
 
@@ -103,6 +113,8 @@ def main():
     print(f"{file1}: {url(file1)}")
     print(f"{file2}: {url(file2)}")
     print(f"Similarity: {similarity:.3f}")
+    os.system(f"code {file1}")
+    os.system(f"code {file2}")
 
 
 if __name__ == "__main__":
