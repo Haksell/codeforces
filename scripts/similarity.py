@@ -32,10 +32,20 @@ def find_similarities():
     return results
 
 
+def url(filename):
+    contest = int(filename[len(DIR) + 1 : len(DIR) + 5])
+    problem = filename[len(DIR) + 5 : -3]
+    return f"https://codeforces.com/contest/{contest}/problem/{problem}"
+
+
 def main():
     similarities = find_similarities()
-    for similarity, file1, file2 in nlargest(10, similarities):
-        print(f"Files: {file1} and {file2} | Similarity: {similarity:.3f}")
+    for i, (similarity, file1, file2) in enumerate(nlargest(3, similarities)):
+        if i:
+            print()
+        print(f"{file1}: {url(file1)}")
+        print(f"{file2}: {url(file2)}")
+        print(f"Similarity: {similarity:.3f}")
 
 
 if __name__ == "__main__":
