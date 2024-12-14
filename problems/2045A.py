@@ -7,7 +7,7 @@ import sys
 
 sys.setrecursionlimit(30000)
 read = sys.stdin.readline
-input = lambda: read().strip()
+input = lambda: read().rstrip()
 ir = lambda: int(read())
 rir = lambda: range(int(read()))
 mir = lambda: map(int, read().split())

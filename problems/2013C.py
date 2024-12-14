@@ -3,7 +3,7 @@ import sys
 
 read = sys.stdin.readline
 write = sys.stdout.write
-input = lambda: read().strip()
+input = lambda: read().rstrip()
 ir = lambda: int(read())
 rir = lambda: range(int(read()))
 mir = lambda: map(int, read().split())
