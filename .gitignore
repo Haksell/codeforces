@@ -3,6 +3,7 @@ out*
 /acm/in*
 /acm/out*
 /new/
+/templatized/
 /scripts/*.pkl
 .ruff_cache/
 9999Z.py
