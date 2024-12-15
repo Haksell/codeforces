@@ -1,5 +1,13 @@
 # ruff: noqa: E731, E741
 from math import inf
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
 
 
 def extract_divisor(numer, denom):
@@ -44,14 +52,19 @@ def get_zero_path(m):
     return "D" * y + "R" * moves + "D" * (moves - y)
 
 
-n = int(input())
-m = [list(map(int, input().split())) for _ in range(n)]
-dp2 = get_dp(n, m, 2)
-dp5 = get_dp(n, m, 5)
-dp = dp2 if dp2[-1][-1] < dp5[-1][-1] else dp5
-if dp[-1][-1] > 0 and any(0 in row for row in m):
-    print(1)
-    print(get_zero_path(m))
-else:
-    print(dp[-1][-1])
-    print(get_min_path(dp))
+def main():
+    n = ir()
+    m = [lmir() for _ in range(n)]
+    dp2 = get_dp(n, m, 2)
+    dp5 = get_dp(n, m, 5)
+    dp = dp2 if dp2[-1][-1] < dp5[-1][-1] else dp5
+    if dp[-1][-1] > 0 and any(0 in row for row in m):
+        print(1)
+        print(get_zero_path(m))
+    else:
+        print(dp[-1][-1])
+        print(get_min_path(dp))
+
+
+if __name__ == "__main__":
+    main()
