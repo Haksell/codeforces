@@ -1,5 +1,3 @@
-# TODO: make all files use same template
-
 import os
 import re
 
