@@ -1,5 +1,13 @@
 # ruff: noqa: E731, E741
 import re
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
 
 
 def standard_to_excel(col):
@@ -18,11 +26,16 @@ def excel_to_standard(col):
     return res
 
 
-for _ in range(int(input())):
-    s = input()
-    if re.fullmatch(r"R\d+C\d+", s):
-        row, col = re.findall(r"\d+", s)
-        print(f"{standard_to_excel(col)}{row}")
-    else:
-        col, row = re.fullmatch(r"([A-Z]+)(\d+)", s).groups()
-        print(f"R{row}C{excel_to_standard(col)}")
+def main():
+    for _ in rir():
+        s = input()
+        if re.fullmatch(r"R\d+C\d+", s):
+            row, col = re.findall(r"\d+", s)
+            print(f"{standard_to_excel(col)}{row}")
+        else:
+            col, row = re.fullmatch(r"([A-Z]+)(\d+)", s).groups()
+            print(f"R{row}C{excel_to_standard(col)}")
+
+
+if __name__ == "__main__":
+    main()

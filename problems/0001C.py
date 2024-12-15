@@ -1,5 +1,13 @@
 # ruff: noqa: E731, E741
 from math import atan2, cos, hypot, sin, tau
+import sys
+
+read = sys.stdin.readline
+input = lambda: read().rstrip()
+ir = lambda: int(read())
+rir = lambda: range(int(read()))
+mir = lambda: map(int, read().split())
+lmir = lambda: list(map(int, read().split()))
 
 
 def get_circumcenter(x1, y1, x2, y2, x3, y3):
@@ -43,16 +51,15 @@ def get_sides(*angle_differences):
     return min(range(3, 101), key=test_sides)
 
 
-x1, y1, x2, y2, x3, y3 = map(float, open(0).read().split())
-cx, cy = get_circumcenter(x1, y1, x2, y2, x3, y3)
-a1 = atan2(y1 - cy, x1 - cx)
-a2 = atan2(y2 - cy, x2 - cx)
-a3 = atan2(y3 - cy, x3 - cx)
-sides = get_sides(abs(a1 - a2), abs(a2 - a3), abs(a3 - a1))
-print(get_polygon_area(cx, cy, x1, y1, sides))
+def main():
+    x1, y1, x2, y2, x3, y3 = map(float, open(0).read().split())
+    cx, cy = get_circumcenter(x1, y1, x2, y2, x3, y3)
+    a1 = atan2(y1 - cy, x1 - cx)
+    a2 = atan2(y2 - cy, x2 - cx)
+    a3 = atan2(y3 - cy, x3 - cx)
+    sides = get_sides(abs(a1 - a2), abs(a2 - a3), abs(a3 - a1))
+    print(get_polygon_area(cx, cy, x1, y1, sides))
 
-"""
-71.756151 7.532275
--48.634784 100.159986
-91.778633 158.107739
-"""
+
+if __name__ == "__main__":
+    main()
