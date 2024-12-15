@@ -2,10 +2,7 @@
 import sys
 
 sys.setrecursionlimit(25000)
-cin = sys.stdin
-read = cin.readline
-cout = sys.stdout
-write = cout.write
+read = sys.stdin.readline
 ir = lambda: int(read())
 rir = lambda: range(int(read()))
 mir = lambda: map(int, read().split())

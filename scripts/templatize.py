@@ -1,42 +1,54 @@
 import os
+from pathlib import Path
 import re
+import sys
 
-DIR = "problems"
+IN_DIR = "problems"
+OUT_DIR = "templatized"
 FILE_PATTERN = re.compile(r"\d{4}[A-Z]\d?\.py")
 RUFF_LINE = "# ruff: noqa: E731, E741\n"
 
 
+def read_file(filepath):
+    try:
+        with open(filepath) as file:
+            return file.read()
+    except Exception as e:
+        print(f"Error reading {filepath}: {e}")
+        sys.exit(1)
+
+
+def write_file(filepath, content):
+    try:
+        with open(filepath, "w") as file:
+            return file.write(content)
+    except Exception as e:
+        print(f"Error writing {filepath}: {e}")
+        sys.exit(1)
+
+
+def templatize(content):
+    return content + "?"
+
+
 def main():
-    already_ruffified = True
-    for filename in os.listdir(DIR):
-        full = os.path.join(DIR, filename)
-        if not FILE_PATTERN.fullmatch(filename) or not os.path.isfile(full):
+    Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
+    already_templatized = True
+    for filename in sorted(os.listdir(IN_DIR))[::100]:
+        filepath = os.path.join(IN_DIR, filename)
+        if not FILE_PATTERN.fullmatch(filename) or not os.path.isfile(filepath):
             continue
-        try:
-            with open(full, "r") as file:
-                lines = file.readlines()
-            assert lines
-        except Exception as e:
-            print(f"Error reading {full}: {e}")
-            continue
-
-        if lines[0] == RUFF_LINE:
-            continue
-
-        if lines[0].startswith(("# ruff", "#ruff")):
-            lines[0] = RUFF_LINE
-        else:
-            lines.insert(0, RUFF_LINE)
-
-        try:
-            with open(full, "w") as file:
-                file.writelines(lines)
-            print(f"Ruffified file: {full}")
-            already_ruffified = False
-        except Exception as e:
-            print(f"Error writing to {full}: {e}")
-    if already_ruffified:
-        print("All files are already ruffified!")
+        content = read_file(filepath)
+        templatized = templatize(content)
+        if content != templatized:
+            already_templatized = False
+            print(f" {filename} ".center(80, "="))
+            print(content, end="" if content.endswith("\n") else "\n")
+            print("-" * 80)
+            print(templatized, end="" if templatized.endswith("\n") else "\n")
+            # write_file(os.path.join(OUT_DIR, filename), templatized)
+    if already_templatized:
+        print("All files are already templatized!")
 
 
 if __name__ == "__main__":

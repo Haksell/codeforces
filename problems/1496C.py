@@ -1,10 +1,7 @@
 # ruff: noqa: E731, E741
 import sys
 
-cin = sys.stdin
-read = cin.readline
-cout = sys.stdout
-write = cout.write
+read = sys.stdin.readline
 rir = lambda: range(int(read()))
 ir = lambda: int(read())
 mir = lambda: map(int, read().split())

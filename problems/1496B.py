@@ -4,10 +4,7 @@ from itertools import count
 from random import randint
 import sys
 
-cin = sys.stdin
-read = cin.readline
-cout = sys.stdout
-write = cout.write
+read = sys.stdin.readline
 rir = lambda: range(int(read()))
 ir = lambda: int(read())
 mir = lambda: map(int, read().split())
