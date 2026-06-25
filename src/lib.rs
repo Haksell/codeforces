@@ -1,6 +1,7 @@
 mod read_macro;
 
 use std::collections::HashMap;
+use std::io::Write as _;
 
 pub fn input() -> String {
     let mut s = String::new();
@@ -25,8 +26,19 @@ pub fn yes_no(b: bool) {
     println!("{}", if b { "YES" } else { "NO" });
 }
 
-pub fn print_iter<S: ToString, I: Iterator<Item = S>>(iter: I) {
-    println!("{}", iter.map(|x| x.to_string()).collect::<Vec<_>>().join(" "));
+pub fn print_iter<S: std::fmt::Display, I: IntoIterator<Item = S>>(iter: I) {
+    let mut stdout = std::io::stdout().lock();
+    let mut first = true;
+
+    for item in iter {
+        if !first {
+            write!(stdout, " ").unwrap();
+        }
+        first = false;
+        write!(stdout, "{item}").unwrap();
+    }
+
+    writeln!(stdout).unwrap();
 }
 
 pub fn counter(s: &str) -> HashMap<char, u32> {

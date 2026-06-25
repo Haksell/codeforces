@@ -43,6 +43,7 @@ bundle: clean install
 	@sed -i -E 's/^macro_rules ! read.*//g' src/bin/tmp.rs
 	@mv src/bin/tmp.rs /tmp/tmp.rs
 	@cp src/read_macro.rs src/bin/tmp.rs
+	@echo >> src/bin/tmp.rs
 	@cat /tmp/tmp.rs >> src/bin/tmp.rs
 	@sed -i -E 's/^#\[macro_export\]$$//g' src/bin/tmp.rs
 	@cargo fix --bin tmp --allow-dirty
