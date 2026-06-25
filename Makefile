@@ -6,6 +6,25 @@ $(error FILE must be set)
 endif
 endif
 
+validate:
+	@$(MAKE) -s format
+	@$(MAKE) -s test
+	@RUSTFLAGS="--deny warnings" $(MAKE) -s check
+	@RUSTFLAGS="--deny warnings" $(MAKE) -s lint
+
+format:
+	@cargo fmt --all
+
+# does not include doctests (--doc), but we have none so far
+test:
+	@cargo test --workspace --all-targets
+
+check:
+	@cargo check --workspace --all-targets
+
+lint:
+	@cargo clippy --workspace --all-targets
+
 clean:
 	@rm -rf src/bin/tmp*.rs
 
