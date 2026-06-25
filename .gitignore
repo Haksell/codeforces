@@ -8,4 +8,5 @@ out*
 .ruff_cache/
 9999Z.py
 /target
+/src/bin/tmp.rs
 /src/bin/tmp*.rs

@@ -5,8 +5,8 @@ use std::sync::LazyLock;
 
 #[test]
 fn codeforces_samples() -> Result<(), Box<dyn std::error::Error>> {
-    for &(problem, input, expected) in TESTS.iter() {
-        Command::cargo_bin(problem)?.write_stdin(input).assert().success().stdout(expected);
+    for &(problem, stdin, stdout) in TESTS.iter() {
+        Command::cargo_bin(problem)?.write_stdin(stdin).assert().success().stdout(stdout);
     }
 
     Ok(())
@@ -57,6 +57,22 @@ YES
 NO
 NO
 YES
+",
+        ),
+        (
+            "2148A",
+            "\
+4
+1 4
+2 5
+3 6
+4 7
+",
+            "\
+0
+2
+0
+4
 ",
         ),
     ]
