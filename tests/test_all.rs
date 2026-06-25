@@ -1,15 +1,22 @@
 #![expect(clippy::tests_outside_test_module)]
 
 use assert_cmd::Command;
-use std::{collections::BTreeMap, sync::LazyLock};
+use std::sync::LazyLock;
 
-static TESTS: LazyLock<BTreeMap<&'static str, Vec<(&'static str, &'static str)>>> =
-    LazyLock::new(|| {
-        BTreeMap::from([
-            (
-                "2167A",
-                vec![(
-                    "\
+#[test]
+fn codeforces_samples() -> Result<(), Box<dyn std::error::Error>> {
+    for &(problem, input, expected) in TESTS.iter() {
+        Command::cargo_bin(problem)?.write_stdin(input).assert().success().stdout(expected);
+    }
+
+    Ok(())
+}
+
+static TESTS: LazyLock<Vec<(&'static str, &'static str, &'static str)>> = LazyLock::new(|| {
+    vec![
+        (
+            "2167A",
+            "\
 7
 1 2 3 4
 1 1 1 1
@@ -19,7 +26,7 @@ static TESTS: LazyLock<BTreeMap<&'static str, Vec<(&'static str, &'static str)>>
 5 5 5 5
 4 10 5 9
 ",
-                    "\
+            "\
 NO
 YES
 YES
@@ -28,12 +35,10 @@ NO
 YES
 NO
 ",
-                )],
-            ),
-            (
-                "2167B",
-                vec![(
-                    "\
+        ),
+        (
+            "2167B",
+            "\
 5
 7
 humitsa mitsuha
@@ -46,25 +51,13 @@ nezuqo nezuko
 6
 misaka mikasa
 ",
-                    "\
+            "\
 YES
 YES
 NO
 NO
 YES
 ",
-                )],
-            ),
-        ])
-    });
-
-#[test]
-fn codeforces_samples() -> Result<(), Box<dyn std::error::Error>> {
-    for (problem, test_cases) in TESTS.iter() {
-        for &(input, expected) in test_cases {
-            Command::cargo_bin(problem)?.write_stdin(input).assert().success().stdout(expected);
-        }
-    }
-
-    Ok(())
-}
+        ),
+    ]
+});
