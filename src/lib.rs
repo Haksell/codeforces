@@ -25,6 +25,10 @@ pub fn yes_no(b: bool) {
     println!("{}", if b { "YES" } else { "NO" });
 }
 
+pub fn print_iter<S: ToString, I: Iterator<Item = S>>(iter: I) {
+    println!("{}", iter.map(|x| x.to_string()).collect::<Vec<_>>().join(" "));
+}
+
 pub fn counter(s: &str) -> HashMap<char, u32> {
     let mut counter = HashMap::new();
     for c in s.chars() {
