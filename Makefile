@@ -48,6 +48,8 @@ bundle: clean install
 	@cargo fix --bin tmp --allow-dirty
 	@cargo clippy --bin tmp --fix --allow-dirty
 	@cargo minify --apply --allow-dirty
+	@cargo fix --bin tmp --allow-dirty
+	@cargo clippy --bin tmp --fix --allow-dirty
 	@cargo fmt
 	@python3 -c '__import__("pyperclip").copy(open("src/bin/tmp.rs").read())'
 	@echo 'Bundled file `src/bin/tmp.rs` copied to clipboard'
