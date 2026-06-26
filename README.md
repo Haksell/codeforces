@@ -1,7 +1,9 @@
 # codeforces
 
-2026/06/25: 1545 problems solved in Python, time to switch to Rust.
+## todo
 
-## books
-
-- [ ] Graph Algorithms the Fun Way (013/379)
+- 1545/1600 problems in Python
+- 4/100 problems in Rust
+- 0/100 ACM problems in Rust
+- 0/115 EDU problems in Rust
+- *Graph Algorithms the Fun Way* (015/379)
