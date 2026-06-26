@@ -12,18 +12,18 @@ trait VecGraph: Graph {}
 trait HashGraph: Graph {}
 trait TreeGraph: Graph {}
 
-struct BUVGraph {}
-struct BUHGraph {}
-struct BUTGraph {}
-struct BWVGraph {}
-struct BWHGraph {}
-struct BWTGraph {}
-struct DUVGraph {}
-struct DUHGraph {}
-struct DUTGraph {}
-struct DWVGraph {}
-struct DWHGraph {}
-struct DWTGraph {}
+struct GraphBUV {}
+struct GraphBUH {}
+struct GraphBUT {}
+struct GraphBWV {}
+struct GraphBWH {}
+struct GraphBWT {}
+struct GraphDUV {}
+struct GraphDUH {}
+struct GraphDUT {}
+struct GraphDWV {}
+struct GraphDWH {}
+struct GraphDWT {}
 
 // pub struct DirectedWeightedGraph {
 //     nodes: Vec<Node>,
