@@ -54,3 +54,9 @@ bundle: clean install
 	@cargo fmt
 	@python3 -c '__import__("pyperclip").copy(open("src/bin/tmp.rs").read())'
 	@echo 'Bundled file `src/bin/tmp.rs` copied to clipboard'
+
+solved:
+	@echo -n "Solved in Python: "
+	@ls python | grep -E '[0-9]{4}[A-Z][0-9]?\.py' | wc -l
+	@echo -n "Solved in Rust: "
+	@ls src/bin | grep -E '[0-9]{4}[A-Z][0-9]?\.rs' | wc -l
