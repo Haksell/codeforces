@@ -4,16 +4,15 @@ use assert_cmd::Command;
 use std::sync::LazyLock;
 
 #[test]
-fn test_all_problems() -> Result<(), Box<dyn std::error::Error>> {
+fn test_problems() -> Result<(), Box<dyn std::error::Error>> {
     for &(problem, stdin, stdout) in TESTS.iter() {
         Command::cargo_bin(problem)?.write_stdin(stdin).assert().success().stdout(stdout);
     }
-
     Ok(())
 }
 
 // TODO: parse from directory
-static TESTS: LazyLock<Vec<(&'static str, &'static str, &'static str)>> = LazyLock::new(|| {
+static TESTS: LazyLock<Vec<(&str, &str, &str)>> = LazyLock::new(|| {
     vec![
         (
             "2167A",
