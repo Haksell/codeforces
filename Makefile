@@ -33,7 +33,7 @@ install:
 	@cargo install cargo-minify
 	@cargo install rustminify-cli
 
-bundle: clean install
+bundle: clean
 	@echo 'extern crate codeforces;' > src/bin/tmp_extern.rs
 	@cat $(FILE) >> src/bin/tmp_extern.rs
 	@rust_bundler_cp --input . --binary tmp_extern --remove_unused_mod >src/bin/tmp.rs
@@ -52,6 +52,8 @@ bundle: clean install
 	@cargo fix --bin tmp --allow-dirty
 	@cargo clippy --bin tmp --fix --allow-dirty
 	@cargo fmt
+
+bundle_copy: bundle
 	@python3 -c '__import__("pyperclip").copy(open("src/bin/tmp.rs").read())'
 	@echo 'Bundled file `src/bin/tmp.rs` copied to clipboard'
 
