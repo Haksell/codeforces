@@ -1,29 +1,35 @@
-trait Graph {
-    fn read() -> Self;
-}
+// trait Graph {
+//     fn read() -> Self;
+// }
 
-trait BidirectedGraph: Graph {}
-trait DirectedGraph: Graph {}
+// trait BidirectedGraph: Graph {}
+// trait DirectedGraph: Graph {}
 
-trait UnweightedGraph: Graph {}
-trait WeightedGraph: Graph {}
+// trait UnweightedGraph: Graph {}
+// trait WeightedGraph: Graph {}
 
-trait VecGraph: Graph {}
-trait HashGraph: Graph {}
-trait TreeGraph: Graph {}
+// trait VecGraph: Graph {}
+// trait HashGraph: Graph {}
+// trait TreeGraph: Graph {}
 
-struct GraphBUV {}
-struct GraphBUH {}
-struct GraphBUT {}
-struct GraphBWV {}
-struct GraphBWH {}
-struct GraphBWT {}
-struct GraphDUV {}
-struct GraphDUH {}
-struct GraphDUT {}
-struct GraphDWV {}
-struct GraphDWH {}
-struct GraphDWT {}
+// struct GraphBUV;
+// struct GraphBUH;
+// struct GraphBUT;
+// struct GraphBWV;
+// struct GraphBWH;
+// struct GraphBWT;
+// struct GraphDUV;
+// struct GraphDUH;
+// struct GraphDUT;
+// struct GraphDWV;
+// struct GraphDWH;
+// struct GraphDWT;
+
+// impl Graph for GraphBUV {
+//     fn read() -> Self {
+//         todo!()
+//     }
+// }
 
 // pub struct DirectedWeightedGraph {
 //     nodes: Vec<Node>,
