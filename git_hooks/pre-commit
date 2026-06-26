@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp README.md /tmp/pre_commit_readme.md
+make validate
+diff README.md /tmp/pre_commit_readme.md
