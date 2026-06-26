@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Activate with the following command:
+# ln -s ../../git_hooks/pre-commit .git/hooks/pre-commit
+
 cp README.md /tmp/pre_commit_readme.md
 make validate
 diff README.md /tmp/pre_commit_readme.md
