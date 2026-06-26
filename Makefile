@@ -15,9 +15,9 @@ validate:
 format:
 	@cargo fmt --all
 
-# does not include doctests (--doc), but we have none so far
 test:
-	@cargo test --workspace --all-targets
+	@cargo test --lib
+	@cargo test --test '*'
 
 check:
 	@cargo check --workspace --all-targets

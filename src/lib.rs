@@ -49,3 +49,16 @@ pub fn counter(s: &str) -> HashMap<char, u32> {
     }
     counter
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_counter() {
+        assert_eq!(
+            counter("babaorum"),
+            HashMap::from([('a', 2), ('b', 2), ('m', 1), ('o', 1), ('r', 1), ('u', 1)])
+        );
+    }
+}
