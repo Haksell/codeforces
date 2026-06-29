@@ -1,4 +1,3 @@
-mod graph;
 mod read_macro;
 
 use std::{cmp::min, collections::HashMap, io::Write as _, mem::swap};
@@ -75,7 +74,6 @@ pub fn gcd(mut a: u64, mut b: u64) -> u64 {
     }
 }
 
-#[inline]
 pub fn lcm(a: u64, b: u64) -> u64 {
     a * b / gcd(a, b)
 }
