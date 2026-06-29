@@ -1,4 +1,7 @@
+mod fenwick_tree;
 mod read_macro;
+
+pub use fenwick_tree::FenwickTree;
 
 use std::{
     cmp::min,
