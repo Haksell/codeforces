@@ -2,9 +2,12 @@
 
 ## todo
 
+- acm154 (factorial)
+- acm231 (prime sum)
+- acm180 (inversions)
 - acm112 (branch)
+- acm106 (the equation)
 - 1545/1600 problems in Python
 - 25/100 problems in Rust
-- 8/100 ACM problems in Rust
+- 10/100 ACM problems in Rust
 - 0/115 EDU problems in Rust
-- find a way to merge all imports and remove duplicates in bundler, then use simpler paths in library

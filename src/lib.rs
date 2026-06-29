@@ -1,16 +1,21 @@
 mod read_macro;
 
-use std::{cmp::min, collections::HashMap, io::Write as _, mem::swap};
+use std::{
+    cmp::min,
+    collections::HashMap,
+    io::{Write as _, stdin},
+    mem::swap,
+};
 
 pub fn input() -> String {
     let mut s = String::new();
-    std::io::stdin().read_line(&mut s).expect("Failed to read line");
+    stdin().read_line(&mut s).expect("Failed to read line");
     s.truncate(s.trim_end().len());
     s
 }
 
 pub fn skip_line() {
-    std::io::stdin().read_line(&mut String::new()).expect("Failed to skip a line");
+    stdin().read_line(&mut String::new()).expect("Failed to skip a line");
 }
 
 pub fn read_vec<T>() -> Vec<T>

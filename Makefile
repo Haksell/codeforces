@@ -37,7 +37,6 @@ install:
 	@cargo install cargo-minify
 	@cargo install rustminify-cli
 
-# TODO: find a way to merge all imports and remove duplicates
 bundle: clean
 	@echo 'extern crate codeforces;' > src/bin/tmp_extern.rs
 	@cat $(FILE) >> src/bin/tmp_extern.rs
