@@ -38,8 +38,9 @@ install:
 	@cargo install rustminify-cli
 
 bundle: clean
-	@echo 'extern crate codeforces;' > src/bin/tmp_extern.rs
-	@cat $(FILE) >> src/bin/tmp_extern.rs
+	@echo 'extern crate codeforces;' >src/bin/tmp_extern.rs
+	@cat $(FILE) >>src/bin/tmp_extern.rs
+	@#removes newlines without asking
 	@rust_bundler_cp --input . --binary tmp_extern --remove_unused_mod >src/bin/tmp.rs
 	@rm src/bin/tmp_extern.rs
 	@sed -i -E 's/^pub //g' src/bin/tmp.rs
@@ -49,8 +50,8 @@ bundle: clean
 	@sed -i -E 's/^macro_rules ! read.*//g' src/bin/tmp.rs
 	@mv src/bin/tmp.rs /tmp/tmp.rs
 	@cp src/read_macro.rs src/bin/tmp.rs
-	@echo >> src/bin/tmp.rs
-	@cat /tmp/tmp.rs >> src/bin/tmp.rs
+	@echo >>src/bin/tmp.rs
+	@cat /tmp/tmp.rs >>src/bin/tmp.rs
 	@sed -i -E 's/^#\[macro_export\]$$//g' src/bin/tmp.rs
 	@python3 scripts/use_on_top.py src/bin/tmp.rs
 	@rustfmt src/bin/tmp.rs $(RUSTFMT_FLAGS)
