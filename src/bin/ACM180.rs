@@ -1,4 +1,4 @@
-use codeforces::{read_vec, skip_line, FenwickTree};
+use codeforces::{FenwickTree, read_vec, skip_line};
 
 fn main() {
     skip_line();
