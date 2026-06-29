@@ -1,5 +1,7 @@
-mod graph;
+mod fixed;
 mod read_macro;
+
+pub use fixed::i1024;
 
 use std::{cmp::min, collections::HashMap, io::Write as _, mem::swap};
 
