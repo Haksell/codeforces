@@ -44,6 +44,7 @@ bundle: clean
 	@rm src/bin/tmp_extern.rs
 	@sed -i -E 's/^pub //g' src/bin/tmp.rs
 	@sed -i -E 's/^#/\n#/g' src/bin/tmp.rs
+	@sed -i -E 's/^const fn/\nconst fn/g' src/bin/tmp.rs
 	@sed -i -E 's/^fn/\nfn/g' src/bin/tmp.rs
 	@sed -i -E 's/^macro_rules ! read.*//g' src/bin/tmp.rs
 	@mv src/bin/tmp.rs /tmp/tmp.rs
