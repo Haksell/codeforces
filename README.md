@@ -2,8 +2,6 @@
 
 ## todo
 
-- acm154 (factorial)
-- acm231 (prime sum)
 - acm180 (inversions)
 - acm112 (branch)
 - acm106 (the equation)
