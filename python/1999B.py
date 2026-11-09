@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def cmp(x, y):
     return (x > y) - (x < y)
 

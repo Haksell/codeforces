@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 _, k, x = map(int, input().split())
 a = sorted(map(int, input().split()))
 diffs = sorted([r - l for l, r in zip(a, a[1:]) if r - l > x], reverse=True)

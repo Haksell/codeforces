@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, k, x = map(int, input().split())
     mini = k * (k + 1) >> 1

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def friends(n):
     return n * (n - 1) >> 1
 

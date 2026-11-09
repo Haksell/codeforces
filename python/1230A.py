@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 a, b, c, d = map(int, input().split())
 s = a + b + c + d
 if s & 1:

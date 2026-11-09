@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from copy import deepcopy
 import sys
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def array_compression(a):
     b = sorted(range(len(a)), key=a.__getitem__)
     return sorted(range(len(b)), key=b.__getitem__)

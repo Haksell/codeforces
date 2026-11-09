@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 a = [int(input()) for _ in range(n)]
 for i in range(1 << n):

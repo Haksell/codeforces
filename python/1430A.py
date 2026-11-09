@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 IMPOSSIBLE = (1, 2, 4)
 for _ in range(int(input())):
     n = int(input())

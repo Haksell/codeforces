@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(v, c, t1, t2):
     if n + m > v + c:
         return False

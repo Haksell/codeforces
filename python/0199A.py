@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 if n <= 3:
     print(0, 0, n)

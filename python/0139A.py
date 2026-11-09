@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 days = list(map(int, input().split()))
 n = (n - 1) % sum(days) + 1

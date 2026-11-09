@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a, b, c = [int(x) - 1 for x in input().split()]
     if a <= b:

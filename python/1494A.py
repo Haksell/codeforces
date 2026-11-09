@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(a, left, third):
     n = 0
     for c in a:

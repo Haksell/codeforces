@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import Counter
 from functools import cache
 from itertools import product

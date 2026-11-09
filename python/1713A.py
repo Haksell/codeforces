@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     min_x = max_x = min_y = max_y = 0
     for _ in range(int(input())):

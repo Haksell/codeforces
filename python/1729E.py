@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for i in range(4, 29):
     print("?", 1, i)
     x = int(input())

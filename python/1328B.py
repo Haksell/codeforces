@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 """
 x=n(n+1)/2
 2x=nn+n

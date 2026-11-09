@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import Counter
 from itertools import combinations, combinations_with_replacement
 from math import gcd

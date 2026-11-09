@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n, a = map(int, input().split())
 a -= 1
 t = [x == "1" for x in input().split()]

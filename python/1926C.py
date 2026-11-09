@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 queries = [int(input()) for _ in range(int(input()))]
 
 sum_digits = [0]

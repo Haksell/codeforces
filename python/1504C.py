@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def g(n, s):
     if s[0] == "0" or s[-1] == "0" or s.count("1") & 1:
         return "NO"

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 a = [0] * 10
 input()
 for c in input():

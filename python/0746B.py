@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 ciphertext = input()
 plaintext = [None] * n

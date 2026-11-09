@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 input()
 c1 = list(map(int, input()))
 c2 = list(map(int, input()))

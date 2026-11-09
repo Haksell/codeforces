@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from math import gcd
 import sys
 
@@ -14,7 +13,7 @@ def main():
     y, w = mir()
     n = 7 - max(y, w)
     g = gcd(n, 6)
-    print(f"{n//g}/{6//g}")
+    print(f"{n // g}/{6 // g}")
 
 
 if __name__ == "__main__":

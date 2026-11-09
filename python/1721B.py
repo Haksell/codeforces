@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def check(w, h, sx, sy, d):
     if sx - d <= 1 and sy - d <= 1:
         return False

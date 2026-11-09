@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def pairs(s, left, right):
     ans = cnt = 0
     for c in s:

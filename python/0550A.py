@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 s = input()
 ab = [i for i in range(len(s) - 1) if s[i : i + 2] == "AB"]
 ba = [i for i in range(len(s) - 1) if s[i : i + 2] == "BA"]

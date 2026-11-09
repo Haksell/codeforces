@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 import sys
 from heapq import heappop, heappush
 

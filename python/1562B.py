@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from itertools import combinations
 from math import isqrt
 

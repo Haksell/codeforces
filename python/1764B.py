@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from functools import reduce
 from math import gcd
 import sys

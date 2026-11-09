@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(n):
     s = str(n)
     return len(s) == len(set(s))

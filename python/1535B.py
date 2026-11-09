@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from math import gcd
 
 for _ in range(int(input())):

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a, b, c = nums = list(map(int, input().split()))
     size = abs(a - b) << 1

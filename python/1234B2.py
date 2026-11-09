@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import deque
 from random import randint
 import sys

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     grid = [list(map(int, input())) for _ in range(9)]
     for y, x in [

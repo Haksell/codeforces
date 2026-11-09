@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a, b, c = map(int, input().split())
     if b + b - c >= a and (b + b - c) % a == 0:

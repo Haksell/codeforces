@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def next_meeting(numer, denom):
     return -(-numer // denom) * denom
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 import sys
 
 lines = [list(map(int, line.split())) for line in sys.stdin]

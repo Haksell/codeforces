@@ -1,5 +1,3 @@
-# ruff: noqa: E731, E741
-
 from math import gcd, lcm
 import sys
 

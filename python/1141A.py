@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n, m = map(int, input().split())
 q, r = divmod(m, n)
 if r != 0:

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n, d = map(int, input().split())
 t = list(map(int, input().split()))
 s = sum(t)

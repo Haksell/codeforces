@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(n, k, x):
     if x != 1:
         return [1] * n

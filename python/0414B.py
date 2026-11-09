@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 MOD = 1_000_000_007
 
 n, k = map(int, input().split())

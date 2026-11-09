@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 h, w = map(int, input().split())
 for y in range(h):
     row = input()

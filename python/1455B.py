@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from math import ceil, sqrt
 
 EPSILON = 1e-9

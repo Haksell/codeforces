@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from math import isqrt
 
 size = 10**6 + 1

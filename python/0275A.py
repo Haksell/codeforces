@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 a, b, c = [int(x) & 1 for x in input().split()]
 d, e, f = [int(x) & 1 for x in input().split()]
 g, h, i = [int(x) & 1 for x in input().split()]

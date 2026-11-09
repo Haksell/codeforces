@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 res = 0
 for bill in (100, 20, 10, 5, 1):

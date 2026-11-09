@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def xor_reduction(n):
     if n & 3 == 0:
         return n

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a, b, c = sorted(map(int, input().split()))
     for _ in range(5):

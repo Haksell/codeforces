@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(a):
     prev = 99
     for ai in reversed(a):

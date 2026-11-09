@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 size = int(input()) + 1
 sieve = [0] * size
 for i in range(2, size):

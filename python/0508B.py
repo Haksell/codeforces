@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 a = list(map(int, input()))
 if all(n & 1 for n in a):
     print(-1)

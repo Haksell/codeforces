@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 class Node:
     def __init__(self, val):
         self.val = val

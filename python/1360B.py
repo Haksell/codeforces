@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a = int(input())
     nums = sorted([int(n) for n in input().split()])

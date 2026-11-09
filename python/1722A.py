@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 t = ["T", "i", "m", "r", "u"]
 for _ in range(int(input())):
     n = int(input())

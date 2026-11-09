@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import defaultdict
 from itertools import accumulate
 import sys

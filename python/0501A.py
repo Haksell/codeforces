@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(p, t):
     return max(p * 0.3, p - p * t / 250)
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 nb = int(input())
 b = sorted(list(map(int, input().split())))
 ng = int(input())

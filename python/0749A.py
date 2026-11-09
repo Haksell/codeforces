@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 a = [2] * (n >> 1)
 if n & 1:

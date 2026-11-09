@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(a, b):
     for size in range(len(a), -1, -1):
         for i in range(size, len(a) + 1):

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(a, d, m, g, p, b):
     if a > g:
         return False

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from itertools import chain
 
 n = int(input())

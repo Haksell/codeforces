@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n, m = map(int, input().split())
 ans = set(range(1, m + 1))
 for _ in range(n):

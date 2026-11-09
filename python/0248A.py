@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 left_opened = left_closed = right_opened = right_closed = 0
 for _ in range(int(input())):
     l, r = map(int, input().split())

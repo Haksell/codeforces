@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def binary_diff(a, b):
     c = a ^ b
     return bin(c).count("1")

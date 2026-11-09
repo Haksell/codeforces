@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 s = input()
 h = len(s) >> 1
 diff = sum(s[i] != s[~i] for i in range(h))

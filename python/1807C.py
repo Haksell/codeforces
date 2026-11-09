@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(s):
     even = set()
     odd = set()

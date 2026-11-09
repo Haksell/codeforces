@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 input()
 s = input()
 d = s.count("D")

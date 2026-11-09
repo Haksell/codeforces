@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import Counter
 from itertools import count
 from random import randint

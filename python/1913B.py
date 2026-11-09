@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(s):
     b0 = b1 = 0
     n0 = s.count("0")

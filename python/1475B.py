@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 lim = 10**6 + 1
 dp = [False] * lim
 dp[0] = True

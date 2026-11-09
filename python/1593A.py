@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(n, x, y):
     return max(0, max(x, y) + 1 - n)
 

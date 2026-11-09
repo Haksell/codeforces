@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     l, r = map(int, input().split())
     y = l << 1

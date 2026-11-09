@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 import sys
 
 read = sys.stdin.readline
@@ -76,14 +75,14 @@ def main():
     out = []
     for x in range(w):
         if results[0][x][SOUTH]:
-            out.append(f"N{x+1}")
+            out.append(f"N{x + 1}")
         if results[-1][x][NORTH]:
-            out.append(f"S{x+1}")
+            out.append(f"S{x + 1}")
     for y in range(h):
         if results[y][0][EAST]:
-            out.append(f"W{y+1}")
+            out.append(f"W{y + 1}")
         if results[y][-1][WEST]:
-            out.append(f"E{y+1}")
+            out.append(f"E{y + 1}")
     print(len(out))
     if out:
         print(*out)

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 SIDES = {
     "Tetrahedron": 4,
     "Cube": 6,

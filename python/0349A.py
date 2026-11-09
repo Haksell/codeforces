@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(a):
     n50 = n25 = 0
     for b in a:

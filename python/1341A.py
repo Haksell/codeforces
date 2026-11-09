@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, a, b, c, d = map(int, input().split())
     min1 = (a - b) * n

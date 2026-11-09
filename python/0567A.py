@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 xs = list(map(int, input().split()))
 for i, x in enumerate(xs):

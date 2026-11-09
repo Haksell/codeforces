@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 q = qa = qaq = 0
 for c in input():
     if c == "Q":

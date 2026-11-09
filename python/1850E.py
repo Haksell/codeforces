@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def solve(c, s):
     c -= sum(si * si for si in s)
     n = len(s)

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     h, m = map(int, input().split(":"))
     x = "AM" if h < 12 else "PM"

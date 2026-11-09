@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     a, b, x, y, n = map(int, input().split())
     aa = max(x, a - n)

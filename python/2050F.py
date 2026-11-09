@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from math import gcd
 import sys
 
@@ -25,7 +24,7 @@ class SegmentTree:
         return self.__n
 
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.__tree[self.__n:]})"
+        return f"{self.__class__.__name__}({self.__tree[self.__n :]})"
 
     def __getitem__(self, i):
         return self.__tree[i + self.__n]

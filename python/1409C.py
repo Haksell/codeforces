@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 for _ in range(int(input())):
     n, x, y = map(int, input().split())
     d = y - x

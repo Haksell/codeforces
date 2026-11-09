@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def is_palindrome(s):
     return all(s[i] == s[~i] for i in range(len(s) >> 1))
 

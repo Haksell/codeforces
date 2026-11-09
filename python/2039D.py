@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from itertools import combinations, product
 from math import gcd, isqrt
 from random import randint, sample

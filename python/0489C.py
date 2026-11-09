@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def get_min(m, s):
     lmin = [0] * m
     lmin[0] = 1

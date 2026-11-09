@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from bisect import bisect_right
 from random import choices, randint, seed
 import sys
@@ -199,7 +198,7 @@ def test():
             print(h, w, k, a, rs)
             print("INVALID")
             print(h, w, k, a)
-            print(f"sum: {sum(map(sum,rs))}")
+            print(f"sum: {sum(map(sum, rs))}")
             print(*rs, sep="\n")
             return
 

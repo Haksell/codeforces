@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 if int(input()) >= 45:
     print("YES")
 else:

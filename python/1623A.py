@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def dist(start, end, size):
     return end - start if end >= start else 2 * size - start - end
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from cmath import inf
 from itertools import accumulate
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 nodes, edges = map(int, input().split())
 bribes = list(map(int, input().split()))
 graph = [[] for _ in range(nodes)]

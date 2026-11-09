@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n = int(input())
 a = sorted(map(int, input().split()))
 lo = 0

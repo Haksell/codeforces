@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(s):
     if s == "M":
         return 0

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 _, c = map(int, input().split())
 t = list(map(int, input().split()))
 start = 0

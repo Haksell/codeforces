@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(words, set1, set2):
     return sum(
         0 if (w in set1) and (w in set2) else 1 if (w in set1) or (w in set2) else 3

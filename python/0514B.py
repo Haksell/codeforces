@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from fractions import Fraction
 from math import inf
 

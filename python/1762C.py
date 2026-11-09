@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from itertools import product
 from math import factorial
 import sys

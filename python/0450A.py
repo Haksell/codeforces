@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def ceil_div(a, b):
     return -(-a // b)
 

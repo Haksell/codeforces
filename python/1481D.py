@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(g, m):
     for y in range(3):
         for x in range(3):

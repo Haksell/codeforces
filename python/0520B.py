@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 n, m = map(int, input().split())
 res = 0
 while n != m:

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(n, x, odds):
     if odds == 0:
         return False

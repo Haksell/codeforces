@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def extract_negative(a):
     neg = next(ai for ai in a if ai < 0)
     a.remove(neg)

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from collections import Counter
 from heapq import heapify, heappop
 from itertools import combinations, count

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(n, d):
     res = {n}
     while n % d == 0:

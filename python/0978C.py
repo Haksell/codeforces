@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from bisect import bisect_left
 from itertools import accumulate
 

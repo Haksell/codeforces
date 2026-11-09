@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(y, x):
     return 0 <= y < h and 0 <= x < w and g[y][x]
 

@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 stack = []
 n = 0
 for c in input():

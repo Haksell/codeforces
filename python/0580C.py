@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 size, maxi = map(int, input().split())
 cats = list(map(int, input().split()))
 tree = [[] for _ in range(size)]

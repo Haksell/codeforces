@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def f(n):
     for i in range(n):
         for j in range(i + 1, n):

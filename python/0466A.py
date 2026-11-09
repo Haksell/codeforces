@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def is_special_ticket_worth(m, a, b):
     return b / m < a
 

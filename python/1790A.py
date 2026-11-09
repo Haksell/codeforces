@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 from itertools import zip_longest
 
 PI = "3141592653589793238462643383279"

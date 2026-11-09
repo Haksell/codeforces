@@ -1,4 +1,3 @@
-# ruff: noqa: E731, E741
 def matches(x, y):
     d = dict()
     for xi, yi in zip(x, y):
