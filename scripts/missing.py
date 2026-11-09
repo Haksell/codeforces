@@ -25,7 +25,9 @@ def get_repo():
         file[:-3] for file in os.listdir(DIR_PYTHON) if file.endswith(".py")
     }
     rust_files = {file[:-3] for file in os.listdir(DIR_RUST) if file.endswith(".rs")}
-    return python_files | rust_files
+    all_files = python_files | rust_files
+    all_files.discard("tmp")
+    return all_files
 
 
 def get_accepted(recompute):
