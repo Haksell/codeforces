@@ -4,5 +4,6 @@
 # ln -s ../../git_hooks/pre-commit .git/hooks/pre-commit
 
 cp README.md /tmp/pre_commit_readme.md
+make clean
 make validate
 diff README.md /tmp/pre_commit_readme.md
