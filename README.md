@@ -5,7 +5,7 @@
 - finish branch `acm180_broken_bundle`
 - finish branch `acm112`
 - solve acm106 (the equation)
-- 1543/1600 problems in Python
-- 27/100 problems in Rust
+- 1542/1600 problems in Python
+- 28/100 problems in Rust
 - 12/100 ACM problems in Rust
 - 0/115 EDU problems in Rust
