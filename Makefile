@@ -24,6 +24,7 @@ clean:
 install:
 	@cargo install cargo-udeps --locked
 	@cargo install cargo-equip --locked
+	@cargo install cargo-minify --locked
 
 PYTHON_PROBLEMS := $(shell ls python | grep -E '[0-9]{4}[A-Z][0-9]?\.py' | wc -l)
 RUST_PROBLEMS := $(shell ls src/bin | grep -E '[0-9]{4}[A-Z][0-9]?\.rs' | wc -l)
