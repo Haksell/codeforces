@@ -3,7 +3,7 @@ mod read_macro;
 use std::{
     cmp::min,
     collections::HashMap,
-    io::{Write as _, stdin},
+    io::{stdin, Write as _},
     mem::swap,
 };
 
