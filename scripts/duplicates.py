@@ -1,8 +1,7 @@
-from collections import defaultdict
 import os
+from collections import defaultdict
 
-
-DIR = "problems"
+DIR = "python"
 
 
 def title(s):
@@ -46,7 +45,7 @@ def main():
         if file[-4].isdigit():
             subtasks[file[:-4]].append(file)
         else:
-            content = open(os.path.join(DIR, file)).read()
+            content = open(os.path.join(DIR, file)).read()  # noqa: SIM115
             standalone[content].append(file)
     show_standalone_duplicates(standalone)
     show_subtasks(subtasks)
